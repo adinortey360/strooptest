@@ -64,18 +64,27 @@
                 output.innerHTML = "<b>Transcript:</b> " + transcript + "<br/> <b>Confidence:</b> " + confidence * 100 + "%";
                 output.classList.remove("hide");
 
-                if(transcript.toUpperCase() === colors[i].colorname.toUpperCase())
-                    console.log("Correct")
-                else
-                    console.log("Wrong")
+                if (transcript.toUpperCase() === colors[i].colorname.toUpperCase()) {
+                    console.log("Correct");
+                } else {
+                    console.log("Wrong");
+                }
+
+
+                if (i + 1 < colors.length) {
+                    i++;
+                }
+                else {
+                    console.log("test is done")
+                }
+
+
+                displayWord();
             };
 
             recognition.start();
 
-            if (i + 1 < colors.length)
-                i++;
-            else
-                console.log("test is done")
+            displayWord();
         }
 
 
