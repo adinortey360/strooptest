@@ -60,8 +60,14 @@
             recognition.onresult = function (event) {
                 var transcript = event.results[0][0].transcript;
                 var confidence = event.results[0][0].confidence;
+
                 output.innerHTML = "<b>Transcript:</b> " + transcript + "<br/> <b>Confidence:</b> " + confidence * 100 + "%";
                 output.classList.remove("hide");
+
+                if(transcript.toUpperCase() === colors[i].colorname.toUpperCase())
+                    console.log("Correct")
+                else
+                    console.log("Wrong")
             };
 
             recognition.start();
