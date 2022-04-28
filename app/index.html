@@ -80,15 +80,18 @@
                 }
 
 
-                if (i + 1 < colors.length*2) {
+                if (i + 1 < colors.length) {
                     i++;
 
-                    if(i+1 > colors.length) {
+                    if(i+1 > colors.length && stage == 1) {
                         stage++;
                         
                         console.log("stage now"+stage.toString());
 
-
+                        if(stage > 2) {
+                            console.log("looop done");
+                            console.log(results);
+                        }
                     }
                 }
                 else {
