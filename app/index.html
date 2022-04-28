@@ -26,20 +26,20 @@
                 "colorcode": "#FF0000"
             },
             {
-                "colorname": "Blue",
-                "colorcode": "#FF0000"
+                "colorname": "Purple",
+                "colorcode": "#6a0dad"
             },
         ]
 
         var i = 0;
 
         function displayWord() {
-            $("#wordandcolor").html(colors[i].colorname);
+            $("#wordandcolor").html("<span style='color:"+colors[i].colorcode+"'>"+colors[i].colorname+"</span>");
             
             if(i+1 < colors.length)
             i++;
             else 
-            alert("test is done")
+            console.log("test is done")
         }
     </script>
 </body>
