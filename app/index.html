@@ -41,6 +41,10 @@
 
         function displayWord() {
 
+            if(i >= colors.length) {
+                i = i - colors.length;
+            }
+
             $("#wordandcolor").html("<span style='color:" + colors[i].colorcode + "'>" + colors[i].colorname + "</span>");
 
 
@@ -77,7 +81,6 @@
                 }
                 else {
                     stage++;
-                    i = 0;
                     console.log("test is done")
                 }
 
