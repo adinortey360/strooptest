@@ -36,6 +36,7 @@
             },
         ]
 
+        var results = []
         var i = 0;
         var stage = 1;
 
@@ -71,8 +72,9 @@
 
                 if (transcript.toUpperCase() === colors[i].colorname.toUpperCase()) {
                     console.log("Correct");
+                    results.push({result: 1, stage: stage});
                 } else {
-                    console.log("Wrong");
+                    results.push({result: 0, stage: stage});
                 }
 
 
@@ -81,7 +83,7 @@
                 }
                 else {
                     stage++;
-                    console.log("test is done")
+                    console.log(results)
                 }
 
 
@@ -90,7 +92,6 @@
 
             recognition.start();
 
-            displayWord();
         }
 
 
