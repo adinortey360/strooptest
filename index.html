@@ -1,0 +1,493 @@
+<html>
+
+<head>
+    <title>StroopTest</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background: #000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .welcome {
+            background: #222222;
+            padding: 50px 50px 70px;
+            max-width: 80%;
+            margin: 50px auto;
+            border-radius: 10px;
+            border-top: 20px solid #fe660d;
+        }
+
+        .welcome .logo {
+            max-width: 150px;
+            margin: auto;
+        }
+
+        .welcome h1 {
+            color: #fff;
+            text-align: center;
+        }
+
+        .welcome p {
+            color: #fff;
+            text-align: center;
+        }
+
+        .welcome small {
+            color: #fff;
+            text-align: center;
+            display: block;
+        }
+
+        .welcome button {
+            color: #fff7f2;
+            background-color: #fe670e;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px auto 0px;
+            width: 230px;
+            display: block;
+            border: none;
+            text-align: center;
+            padding: 9px;
+            border-radius: 25px;
+        }
+
+        .test {
+            background: #111111;
+            padding: 50px 50px 70px;
+            max-width: 80%;
+            margin: 50px auto;
+            border-radius: 10px;
+            border-top: 20px solid #111;
+        }
+
+        .test h1 {
+            text-align: center;
+            font-size: 120px;
+        }
+
+        .stage2_alert {
+            text-align: center;
+        }
+
+        .stage2_alert h2 {
+            color: #fff;
+            font-size: 70px;
+            margin-bottom: 20px;
+            margin-top: 15px;
+        }
+
+        .stage2_alert p {
+            color: #fff;
+        }
+
+        .stage2_alert button {
+            color: #fff7f2;
+            background-color: #fe0215;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 75px auto 20px;
+            width: 230px;
+            display: block;
+            border: none;
+            text-align: center;
+            padding: 9px;
+            border-radius: 25px;
+        }
+
+        .stage2_alert .logo {
+            max-width: 150px;
+            margin: auto;
+        }
+
+        .result {
+            text-align: center;
+        }
+
+        .result .logo {
+            max-width: 150px;
+            margin: auto;
+        }
+
+        .result h2 {
+            color: #fff;
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .result p {
+            color: #fff;
+        }
+
+        .result button {
+            color: #fff7f2;
+            background-color: #0d8014;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px auto 0px;
+            width: 230px;
+            display: block;
+            border: none;
+            text-align: center;
+            padding: 9px;
+            border-radius: 25px;
+        }
+
+        .test_screen button {
+            font-size: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: 18px;
+    right: 57px;
+    background: #fff;
+    border: none;
+        }
+
+        .spinner {
+            width: 11.2px;
+            height: 11.2px;
+            margin: auto;
+            animation: spinner-o824ag 1s infinite linear;
+        }
+
+        .spinner div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: spinner-vse6n7 1.25s infinite ease;
+        }
+
+        .spinner div:nth-child(1) {
+            --rotation: 90;
+        }
+
+        .spinner div:nth-child(2) {
+            --rotation: 180;
+        }
+
+        .spinner div:nth-child(3) {
+            --rotation: 270;
+        }
+
+        .spinner div:nth-child(4) {
+            --rotation: 360;
+        }
+
+        @keyframes spinner-vse6n7 {
+
+            0%,
+            100% {
+                transform: rotate(calc(var(--rotation) * 1deg)) translateY(0);
+            }
+
+            50% {
+                transform: rotate(calc(var(--rotation) * 1deg)) translateY(300%);
+            }
+        }
+
+        @keyframes spinner-o824ag {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome">
+        <div class="logo">
+            <img style="width:100%" src="adhd-rainbow-butterfly.png" />
+        </div>
+        <h1>Welcome to Strooptest 👋</h1>
+        <p>In this test, you will be presented with 40 colored words (20 in the first stage and 20 in the second stage).
+            You will need to read the word aloud without
+            mentioning the color of the text. You will need to take this test in a quiet room free of distraction. We
+            will estimate your risk by voice
+            recognition and give you a score.</p>
+        <br>
+        <small>It's best to connect an headset with a microphone to ensure maximum machine confidence.</small>
+        <br>
+        <button onclick="displayWord()">Start your test now</button>
+    </div>
+
+    <div class="test" style="display: none;">
+        <div class="stage2_alert" style="display: none;">
+            <div class="logo">
+                <img style="width:100%" src="adhd-rainbow-butterfly.png" />
+            </div>
+            <h2>Stage 2</h2>
+            <p>Well done! The first stage is complete. You are about to start the second stage of this test. Please
+                remember to read the text out loud and
+                not the color displayed.</p>
+            <button onclick="displayWord()">Start now</button>
+        </div>
+
+        <div class="result" style="display: none;">
+            <div class="logo">
+                <img style="width:100%" src="adhd-rainbow-butterfly.png" />
+            </div>
+            <h2 class="score"></h2>
+            <p class="score_message"></p>
+            <br>
+            <button onclick="startOver()">Go home</button>
+        </div>
+        <div class="test_screen" style="display: none;">
+            <button onclick="startOver()">❌</button>
+            <h1 id="wordandcolor"></h1>
+            <p><span id="action"></span></p>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var colors = [
+            {
+                "colorname": "Blue",
+                "colorcode": "#0600e9"
+            },
+            {
+                "colorname": "Orange",
+                "colorcode": "#e57b2a"
+            },
+            {
+                "colorname": "Green",
+                "colorcode": "#4ef130"
+            },
+            {
+                "colorname": "Red",
+                "colorcode": "#e71b25"
+            },
+            {
+                "colorname": "Purple",
+                "colorcode": "#f925fa"
+            },
+            {
+                "colorname": "Red",
+                "colorcode": "#e71b25"
+            },
+            {
+                "colorname": "Purple",
+                "colorcode": "#f925fa"
+            },
+            {
+                "colorname": "Blue",
+                "colorcode": "#0600e9"
+            },
+            {
+                "colorname": "Orange",
+                "colorcode": "#e57b2a"
+            },
+            {
+                "colorname": "Green",
+                "colorcode": "#4ef130"
+            },
+            {
+                "colorname": "Blue",
+                "colorcode": "#0600e9"
+            },
+            {
+                "colorname": "Orange",
+                "colorcode": "#e57b2a"
+            },
+            {
+                "colorname": "Green",
+                "colorcode": "#4ef130"
+            },
+            {
+                "colorname": "Red",
+                "colorcode": "#e71b25"
+            },
+            {
+                "colorname": "Purple",
+                "colorcode": "#f925fa"
+            },
+            {
+                "colorname": "Red",
+                "colorcode": "#e71b25"
+            },
+            {
+                "colorname": "Purple",
+                "colorcode": "#f925fa"
+            },
+            {
+                "colorname": "Blue",
+                "colorcode": "#0600e9"
+            },
+            {
+                "colorname": "Orange",
+                "colorcode": "#e57b2a"
+            },
+            {
+                "colorname": "Green",
+                "colorcode": "#4ef130"
+            },
+        ]
+
+
+        localStorage.setItem('stage', 1);
+        var results = [];
+        var i = 0;
+
+        function displayWord() {
+            $(".test").show();
+            $(".welcome").hide();
+            $(".test_screen").show();
+            $(".stage2_alert").hide();
+            console.log(typeof (localStorage.getItem('stage')));
+            var color = colors[i].colorcode;
+            if (parseInt(localStorage.getItem('stage')) == 2) {
+                color = getColor(i);
+            }
+            $("#wordandcolor").html("<span style='color:" + color + "'>" + colors[i].colorname + "</span>");
+
+
+            var action = document.getElementById("action");
+            var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+            var recognition = new SpeechRecognition();
+
+            recognition.onstart = function () {
+                action.innerHTML = '<div class="spinner"> <div></div> <div></div> <div></div> <div></div> </div>';
+            };
+
+            recognition.onspeechend = function () {
+                action.innerHTML = "<small> </small>";
+                recognition.stop();
+            }
+
+            recognition.onresult = function (event) {
+                var transcript = event.results[0][0].transcript;
+                var confidence = event.results[0][0].confidence;
+
+
+
+                if (transcript.toUpperCase() === colors[i].colorname.toUpperCase()) {
+                    console.log("Correct");
+                    results.push({ result: 1, stage: localStorage.getItem('stage'), ml_confidence: confidence, transcript: transcript });
+                } else {
+                    console.log("Wrong");
+                    results.push({ result: 0, stage: localStorage.getItem('stage'), ml_confidence: confidence, transcript: transcript });
+                }
+
+
+                if (i + 1 < colors.length) {
+                    i++;
+                    displayWord();
+                } else {
+                    if (i + 1 >= colors.length) {
+
+                        if (parseInt(localStorage.getItem('stage')) == 2) {
+                            calculateScore();
+                            $(".stage2_alert").hide();
+                            $(".test_screen").hide();
+                            $(".result").show();
+                            localStorage.setItem('stage', 1);
+                        } else {
+                            console.log("Stage 1 complete");
+
+                            $(".stage2_alert").show();
+                            $(".test_screen").hide();
+                            console.log(results);
+                            i -= i;
+                            localStorage.setItem('stage', 2);
+                        }
+
+                        //
+
+
+
+                    }
+
+                }
+            };
+
+
+
+            recognition.start();
+
+        }
+
+        function getColor(index) {
+            var currarr = colors;
+            currarr.slice(index, 1);
+
+            var min = 0;
+            var max = colors.length - 1;
+
+            var randomindex = Math.floor(Math.random() * (max - min + 1) + min);
+
+            return colors[randomindex].colorcode;
+        }
+
+        function calculateScore() {
+            totalScore = colors.length;
+            stage1 = 0;
+            stage2 = 0;
+
+            total_per_ten = 10;
+
+            strong_threshold = 3;
+            avg_threshold = 5;
+            normal_threshold = 7;
+            weak_threshold = 9;
+
+            results.forEach(function (item) {
+                if (item.result == 1) {
+                    if (parseInt(item.stage) == 1) {
+                        stage1 += 1;
+                    } else if (parseInt(item.stage) == 2) {
+                        stage2 += 1;
+                    }
+                }
+            });
+
+            var stage1score = (stage1 / totalScore * 100) / total_per_ten;
+            var stage2score = (stage1 / totalScore * 100) / total_per_ten;
+
+            if (stage1score > 7) {
+                //if stage 1 passes 70% the stage 2 test is valid
+                $(".score").html(stage2score + "/" + total_per_ten);
+                if (stage2score <= strong_threshold) {
+                    $(".score_message").html("Your results indicate a very high probability of ADHD or related symptoms. Please confirm with your doctor.");
+                } else if (stage2score <= avg_threshold) {
+                    $(".score_message").html("Your results indicate a high probability of ADHD or related symptoms. Please confirm with your doctor.");
+                } else if (stage2score <= normal_threshold) {
+                    $(".score_message").html("Your results indicate a small probability of ADHD or related symptoms. Please confirm with your doctor.");
+                } else if (stage2score <= weak_threshold) {
+                    $(".score_message").html("Your results indicate a weak probability of ADHD or related symptoms. Please confirm with your doctor.");
+                } else {
+                    $(".score_message").html("An error was encountered. Please try again after a few minutes.");
+                }
+            } else {
+                $(".score").html(0 + "/" + 0);
+                $(".score_message").html("An error was encountered. Please try again after a few minutes.");
+            }
+        }
+
+
+        function startOver() {
+            $(".welcome").show();
+            $(".stage2_alert").hide();
+            $(".test_screen").hide();
+            $(".result").hide();
+            $(".test").hide();
+            i -= i;
+            localStorage.setItem('stage', 1);
+        }
+    </script>
+</body>
+
+</html>
