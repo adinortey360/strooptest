@@ -1,0 +1,22 @@
+{
+  "name": "strooptest",
+  "version": "1.0.0",
+  "description": "A stroop test application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/adinortey360/strooptest",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^18.1.0"
+  }
+}
