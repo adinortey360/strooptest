@@ -11,12 +11,17 @@
             mentioning the color of the text.</p>
         <p>You will need to take this test in a quiet room free of distraction. We will estimate your risk by voice
             recognition and give you a score.</p>
-        <button onclick="displayWord()">Take the test now</button>     
+        <button onclick="displayWord()">Take the test now</button>
     </div>
-   
+
     <div class="test">
         <h1 id="wordandcolor">red</h1>
     </div>
+
+
+    <p>Click on the below button and speak something...</p>
+    <p><span id="action"></span></p>
+    <div id="output" class="hide"></div>
 
     <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
     <script>
@@ -34,13 +39,40 @@
         var i = 0;
 
         function displayWord() {
-            $("#wordandcolor").html("<span style='color:"+colors[i].colorcode+"'>"+colors[i].colorname+"</span>");
-            
-            if(i+1 < colors.length)
-            i++;
-            else 
-            console.log("test is done")
+
+            $("#wordandcolor").html("<span style='color:" + colors[i].colorcode + "'>" + colors[i].colorname + "</span>");
+
+
+            var output = document.getElementById("output");
+            var action = document.getElementById("action");
+            var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+            var recognition = new SpeechRecognition();
+
+            recognition.onstart = function () {
+                action.innerHTML = "<small>listening...</small>";
+            };
+
+            recognition.onspeechend = function () {
+                action.innerHTML = "<small>done...</small>";
+                recognition.stop();
+            }
+
+            recognition.onresult = function (event) {
+                var transcript = event.results[0][0].transcript;
+                var confidence = event.results[0][0].confidence;
+                output.innerHTML = "<b>Transcript:</b> " + transcript + "<br/> <b>Confidence:</b> " + confidence * 100 + "%";
+                output.classList.remove("hide");
+            };
+
+            recognition.start();
+
+            if (i + 1 < colors.length)
+                i++;
+            else
+                console.log("test is done")
         }
+
+
     </script>
 </body>
 
