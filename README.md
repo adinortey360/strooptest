@@ -26,7 +26,6 @@ Once all of the dependencies have been installed, you can launch the application
 
 The application will open in a new window, and you can begin the Stroop Test by following the on-screen instructions.
 
-We encourage you to try the test multiple times to see how your score improves with practice. You can also share your scores with friends to see who has the best attention span.
 
 If you have any questions or suggestions for improving the application, please feel free to open an issue on the GitHub repository. I would welcome all contributions and feedback.
 
