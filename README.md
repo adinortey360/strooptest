@@ -1,41 +1,35 @@
-# electron-quick-start
+Stroop Test
+-----------
 
-**Clone and run for a quick way to see Electron in action.**
+Stroop Test is a simple JavaScript application built with Electron JS that uses the SpeechRecognition Web API to test a user's ability to focus and concentrate.
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/latest/tutorial/quick-start) within the Electron documentation.
+To use the application, simply clone the repository and run `npm install` to install the necessary dependencies. Then, run `npm start` to launch the application.
 
-A basic Electron application needs just these files:
+Once the application is open, you will be presented with a series of words that are displayed in different colors. Your task is to identify the color of the text, not the word itself. This can be challenging because the text and the color may not match. For example, the word "red" may be displayed in blue font.
 
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
+The test will measure how quickly and accurately you are able to identify the colors of the words. At the end of the test, you will be given a score based on your performance. This score can be used as a general indication of your ability to focus and concentrate.
 
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/latest/tutorial/quick-start).
 
-## To Use
+# How to setup
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To use Stroop Test, you will need a computer with the latest version of Node.js and npm installed. You will also need an internet connection to access the SpeechRecognition Web API.
 
-```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies
-npm install
-# Run the app
-npm start
-```
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+To get started, clone the repository and navigate to the root directory of the project. Then, run the following commands to install the necessary dependencies:
 
-## Resources for Learning Electron
+`npm install`
 
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+Once all of the dependencies have been installed, you can launch the application by running:
 
-## License
+`npm start`
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+The application will open in a new window, and you can begin the Stroop Test by following the on-screen instructions.
+
+We encourage you to try the test multiple times to see how your score improves with practice. You can also share your scores with friends to see who has the best attention span.
+
+If you have any questions or suggestions for improving the application, please feel free to open an issue on the GitHub repository. I would welcome all contributions and feedback.
+
+  
+# DISCLAIMER
+
+Please note that Stroop Test is not intended to be a diagnostic tool and should not be used as a substitute for professional medical advice. The results of the test are for informational purposes only and are not a definitive measure of attention span or cognitive ability. If you have concerns about your attention span or cognitive health, please consult a qualified healthcare provider.
